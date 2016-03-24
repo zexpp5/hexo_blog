@@ -44,8 +44,7 @@ $ sudo docker run hello-world
 mkdir -p /etc/ppp
 touch /etc/ppp/chap-secrets
 echo "# Secrets for authentication using PAP" >> /etc/ppp/chap-secrets
-echo "# client    server      secret      acceptable local IP addresses
-" >> /etc/ppp/chap-secrets
+echo "# client    server      secret      acceptable local IP addresses" >> /etc/ppp/chap-secrets
 echo "stan    *           smith    *" >> /etc/ppp/chap-secrets
 
 ```
