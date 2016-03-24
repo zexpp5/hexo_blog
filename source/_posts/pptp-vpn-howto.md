@@ -56,4 +56,6 @@ docker run -d --privileged --net=host -v /etc/ppp/chap-secrets:/etc/ppp/chap-sec
 
 ```
 
-7.Enjoy your own ladder.
+7.现在用stan/smith分别作为用户名和密码连接vps的ip就可以了，vpn类型选择pptp.
+
+8.Enjoy your own ladder.
