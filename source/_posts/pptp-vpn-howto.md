@@ -39,4 +39,22 @@ $ sudo docker run hello-world
 
 4. 在docker hub上找个pptp vpn容器，这里用的是[mobtitude/vpn-pptp](https://hub.docker.com/r/mobtitude/vpn-pptp/)
 
-待续
+5.创建账户文件
+```
+mkdir -p /etc/ppp
+touch /etc/ppp/chap-secrets
+echo "# Secrets for authentication using PAP" >> /etc/ppp/chap-secrets
+echo "# client    server      secret      acceptable local IP addresses
+" >> /etc/ppp/chap-secrets
+echo "stan    *           smith    *" >> /etc/ppp/chap-secrets
+
+```
+[账户验证文件详情](https://hub.docker.com/r/mobtitude/vpn-pptp/)
+
+6.启动pptp服务
+```
+docker run -d --privileged --net=host -v /etc/ppp/chap-secrets:/etc/ppp/chap-secrets mobtitude/vpn-pptp
+
+```
+
+7.Enjoy your own ladder.
